@@ -7,6 +7,6 @@ app.use(express.urlencoded({
     extended:true
 })
 );
-app.use(express.jason()); //all data transfer in jason
+app.use(express.json()); //all data transfer in jason
 
 module.exports=app;
