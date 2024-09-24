@@ -3,7 +3,7 @@ const app=express();
 const cors=require('cors'); //cros origin resource sharing
 
 const port=3001;
-const host='127.0.0.1';
+const host='localhost';
 const mongoose=require("mongoose");
 const router=require('./router');
 
@@ -31,6 +31,6 @@ const server=app.listen(3001,'127.0.0.1',()=>{
     console.log(`node server listening ${server.address().port}`);
 });
 
-module.export=app;
+module.exports=app;
 
 app.use('/api',router);
