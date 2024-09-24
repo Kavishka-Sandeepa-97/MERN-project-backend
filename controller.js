@@ -10,7 +10,7 @@ const getUsers = (req, res, next) => {
         })
 }
 
-const addUser = (req, res, next) => {
+const createUser = (req, res, next) => {
     const user = new User({
         id: req.body.id,
         name: req.body.name
@@ -46,7 +46,7 @@ const deleteUser=(req,res,next)=>{
     })
 }
 
-module.export={getUsers,addUser,deleteUser,updateUser}
+module.exports={getUsers,createUser,deleteUser,updateUser}
 
 
 // const getUsers=(cb)=>{

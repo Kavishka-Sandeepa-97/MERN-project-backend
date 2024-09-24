@@ -10,6 +10,11 @@ const router=require('./router');
 app.use(cors());
 app.use(express.json()); //all data transfer in jason
 
+app.use(express.urlencoded({
+    extended:true
+})
+);
+
 const uri='mongodb+srv://kavishka:kavi%40123@cluster0.7fodv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 const connection=async ()=>{

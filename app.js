@@ -1,13 +1,7 @@
 
 
 const {getUsers,createUser,updateUser,deleteUser}=require('./controller')
-const app=requier('./app')
-
-app.use(express.urlencoded({
-    extended:true
-})
-);
-
+const app=require('./server');
 
 app.get('/users',(req,res)=>{
     getUsers((req,res,next)=>{
