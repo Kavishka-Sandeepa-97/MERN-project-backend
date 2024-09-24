@@ -24,17 +24,29 @@ const addUser = (req, res, next) => {
         })
 }
 
-const updae 
+const updateUser=(req,res,next)=>{
+    const{name,id}=req.body;
+    user.updateOne({id:id},{$set:{name:name}})
+    .then(response => {
+        res.json({ response })
+    })
+    .catch(error => {
+        res.json({ error })
+    })
+}
 
+const deleteUser=(req,res,next)=>{
+    const id=req.body.id;
+    user.deleteOne({id:id})
+    .then(response => {
+        res.json({ response })
+    })
+    .catch(error => {
+        res.json({ error })
+    })
+}
 
-
-
-
-
-
-
-
-
+module.export={getUsers,addUser,deleteUser,updateUser}
 
 
 // const getUsers=(cb)=>{
@@ -45,5 +57,3 @@ const updae
 //     const user=users.find((user)=>id==user.id);
 //     cb(user);
 // }
-
-module.exports = { getUsers, getUserByid };

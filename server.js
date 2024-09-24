@@ -5,11 +5,12 @@ const cors=require('cors'); //cros origin resource sharing
 const port=3001;
 const host='127.0.0.1';
 const mongoose=require("mongoose");
+const router=require('./router');
 
 app.use(cors());
 app.use(express.json()); //all data transfer in jason
 
-const uri='mongodb+srv://kavishka:Kavi@123@cluster0.7fodv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri='mongodb+srv://kavishka:kavi%40123@cluster0.7fodv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 const connection=async ()=>{
     try {
@@ -24,3 +25,7 @@ connection();
 const server=app.listen(3001,'127.0.0.1',()=>{
     console.log(`node server listening ${server.address().port}`);
 });
+
+module.export=app;
+
+app.use('/api',router);

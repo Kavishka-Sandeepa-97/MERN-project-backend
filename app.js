@@ -1,7 +1,7 @@
 
 
-const {getUsers,getUserByid}=require('./controller')
-
+const {getUsers,createUser,updateUser,deleteUser}=require('./controller')
+const app=requier('./app')
 
 app.use(express.urlencoded({
     extended:true
@@ -9,16 +9,26 @@ app.use(express.urlencoded({
 );
 
 
-module.exports=app;
-
 app.get('/users',(req,res)=>{
-    getUsers(users=>{
-        res.send(users);
+    getUsers((req,res,next)=>{
+        res.send();
     })
 });
 
-app.get('/user',(req,res)=>{
-    getUserByid(req.query.id,user=>{
-        res.send(user);
+app.post('/createUser',(req,res)=>{
+    createUser(req.body,(callback)=>{
+        res.send();
+    })
+});
+
+app.put('/updateUser',(req,res)=>{
+    updateUser(req.body,(callback)=>{
+        res.send(callback );
+    })
+});
+
+app.delete('/deleteUser',(req,res)=>{
+    deleteUser(req.body,(callback)=>{
+        res.send(callback );
     })
 });
