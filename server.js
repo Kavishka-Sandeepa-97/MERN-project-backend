@@ -15,7 +15,7 @@ app.use(express.urlencoded({
 })
 );
 
-const uri='mongodb+srv://kavishka:kavi%40123@cluster0.7fodv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri='mongodb+srv://kavishka:Kavi%40123@cluster0.7fodv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 const connection=async ()=>{
     try {
